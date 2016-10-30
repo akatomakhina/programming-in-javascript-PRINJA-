@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>top tracks</title>
+	<link rel='stylesheet' href='css/bootstrap.min.css' type='text/css' media='all'>
+	<link rel='stylesheet' href='css/styles.css' type='text/css'>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/handlebars.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+	<div class="container">
+      <div class="title">
+        <h1>Top Tracks!</h1>
+        <p class="lead">No politics. No philosophy. No sufferings. Just top tracks.</p>
+      </div>
+
+      <hr>
+	
+	<div class="updates"></div>
+
+	<div class="tracks">
+	    <script id="template" type="text/x-handlebars-template">
+			{{#each tracks.track}}
+	    	<div class="item col-sm-6 col-md-4">
+
+		        <h2>{{name}}</h2>
+
+		      	<table class="table table-condensed">
+		      		<tr>
+			          <td>Playcount:</td> 
+			          <td>{{playcount}}</td>
+        			</tr>
+        			<tr>
+			          <td>Listeners:</td> 
+			          <td>{{listeners}}</td>
+        			</tr>
+        			<tr>
+			          <td>Listeners:</td> 
+        			</tr>
+        		</table>
+			</div>
+			{{/each}}
+		</script>
+	</div>
+
+      <hr>
+
+      <div class="footer">
+        <p>&copy; Company 2016</p>
+      </div>
+
+    </div>
+</body>
+</html>

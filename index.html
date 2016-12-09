@@ -15,12 +15,14 @@
         <h1>Top Tracks!</h1>
         <p class="lead">No politics. No philosophy. No sufferings. Just top tracks.</p>
       </div>
+     	<div id="error-http">HTTP ERROR</div>
+		<div id="error-network">NETWORK ERROR</div>
 
       <hr>
-	
+
 	<div class="updates"></div>
 
-	<div class="tracks">
+	<div id="tracks" class="tracks">
 	    <script id="template" type="text/x-handlebars-template">
 			{{#each tracks.track}}
 	    	<div class="item col-sm-6 col-md-4">
@@ -29,11 +31,11 @@
 
 		      	<table class="table table-condensed">
 		      		<tr>
-			          <td>Playcount:</td> 
+			          <td>Playcount:</td>
 			          <td>{{playcount}}</td>
         			</tr>
         			<tr>
-			          <td>Listeners:</td> 
+			          <td>Listeners:</td>
 			          <td>{{listeners}}</td>
         			</tr>
         		</table>

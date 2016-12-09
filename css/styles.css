@@ -30,3 +30,16 @@
 	padding: 0;
 	margin: 0 0 10px 0;
 }
+
+#error-http{
+	display:none;
+	text-align:center;
+	color:red;
+	font-size: 38px;
+}
+#error-network{
+	display:none;
+	text-align:center;
+	color:red;
+	font-size: 38px;
+}

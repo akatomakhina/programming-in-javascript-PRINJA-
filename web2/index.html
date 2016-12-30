@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/my.css">
+</head>
+<body ng-app="myapp" ng-init="slytherinS=[];gryffindorS=[];durmstrangS=[];mahoutokoroS=[];championship=[]">
+
+
+
+		<!--<div id="accordion">-->
+	<div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-default navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              </button>
+              <a class="navbar-brand" href="#">Хогвартс и Болгария</a>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+<div class="container">
+			<div class="Hogwarts">
+			 <div class="row">
+        		<div class="col-md-3">
+				<div class="Hogwarts_left" ng-controller = "SlytherinController">
+					<h2>Слайзерин</h2>
+
+						<form name = "SlytherinForm">
+							<p>Страна: <input name = "countrySlytherin" type = "text" ng-model = "countrySlytherin" required/></p>
+							<p>Введите тип: <input name = "typeSlytherin" type = "text" ng-model = "typeSlytherin" required/></p>
+							<p>Введите имя: <input name = "nameSlytherin" type = "text" ng-model = "nameSlytherin" required/></p>
+							<p>Школа: <input name= "schoolSlytherin" type = "text" ng-model = "schoolSlytherin" required /></p>
+							<p>Факультет: <input name = "facultySlytherin" type = "text" ng-model = "facultySlytherin" required/></p>
+							<p>Введите рост: <input name= "heightSlytherin" type = "text" ng-model = "heightSlytherin" required /></p>
+						</form>
+			      <!--<button ng-click = "addSlytherin(SlytherinForm)">Add slytherin</button>-->
+			      <input  type="button" class="btn btn-success" ng-click = "addSlytherin(SlytherinForm)" value="Добавить Слайзерин">
+			      <div ng-repeat = "slytherin in slytherinS" class="btnbtn">
+							<p>
+								{{slytherin.country}} {{slytherin.type}} {{slytherin.name}} {{slytherin.school}} {{slytherin.faculty}} {{slytherin.height}}
+								<input  type="button" class="btn btn-success" ng-click = "editSlytherin(slytherin)" value="Редактировать">
+								<input  type="button" class="btn btn-success" ng-click = "removeSlytherin(slytherin)" value="Удалить">
+								<input  type="button" class="btn btn-success" ng-click = "addSlytherinToF(slytherin)" value="Добавить на чемпионат">
+							</p>
+			      </div>
+				</div>
+
+				</div>
+				<div class="col-md-4">
+				<div class="Hogwarts_right" ng-controller = "GryffindorController">
+					<h2>Гриффиндор</h2>
+
+						<form name = "GryffindorForm">
+							<p>Введите страну: <input name = "countryGryffindor" type = "text" ng-model = "countryGryffindor" required/></p>
+							<p>Введите тип: <input name = "typeGryffindor" type = "text" ng-model = "typeGryffindor" required/></p>
+							<p>Введите имя: <input name = "nameGryffindor" type = "text" ng-model = "nameGryffindor" required/></p>
+							<p>Введите школу: <input name= "schoolGryffindor" type = "text" ng-model = "schoolGryffindor" required /></p>
+							<p>Введите факультет: <input name = "facultyGryffindor" type = "text" ng-model = "facultyGryffindor" required/></p>
+							<p>Введите метлу: <input name= "broomSlytherin" type = "text" ng-model = "broomSlytherin" required /></p>
+						</form>
+			      <!--<button ng-click = "addGryffindor(GryffindorForm)">Add gryffindor</button>-->
+			      <input  type="button" class="btn btn-success" ng-click = "addGryffindor(GryffindorForm)" value="Добавить Гриффиндор">
+			      <div ng-repeat = "gryffindor in gryffindorS" class="btnbtn">
+							<p>
+								{{gryffindor.country}} {{gryffindor.type}} {{gryffindor.name}} {{gryffindor.school}} {{gryffindor.faculty}} {{gryffindor.broom}}
+								<input  type="button" class="btn btn-success" ng-click = "editGryffindor(gryffindor)" value="Редактировать">
+								<input  type="button" class="btn btn-success" ng-click = "removeGryffindor(gryffindor)" value="Удалить">
+								<input  type="button" class="btn btn-success" ng-click = "addGryffindorToF(gryffindor)" value="Добавить на чемпионат">
+							</p>
+			      		</div>
+				</div>
+				</div>
+		
+			
+			<div class="Bulgaria">
+			<div class="col-md-3">
+				<div class="Bulgaria_left" ng-controller = "DurmstrangController">
+					<h2>Дурмстранг</h2>
+						<form name = "DurmstrangForm">
+							<p>Введите страну: <input name = "countryDurmstrang" type = "text" ng-model = "countryDurmstrang" required/></p>
+							<p>Введите тип: <input name = "typeDurmstrang" type = "text" ng-model = "typeDurmstrang" required/></p>
+							<p>Введите имя: <input name = "nameDurmstrang" type = "text" ng-model = "nameDurmstrang" required/></p> 
+							<p>Тренировки : <input name = "workoutsDurmstrang" type = "text" ng-model = "workoutsDurmstrang" required/></p>
+							<p>Введите возраст : <input name = "ageDurmstrang" type = "text" ng-model = "ageDurmstrang" required/></p>
+							<p>Введите финт : <input name = "feintDurmstrang" type = "text" ng-model = "feintDurmstrang" required/></p>
+						</form>
+						<!--<button ng-click = "addDurmstrang(DurmstrangForm)">Add durmstrang</button>-->
+						<input  type="button" class="btn btn-success" ng-click = "addDurmstrang(DurmstrangForm)" value="Добавить Дурмстранг">
+						<div ng-repeat = "durmstrang in durmstrangS" class="btnbtn">
+							<p>
+								{{durmstrang.country}} {{durmstrang.type}} {{durmstrang.name}} {{durmstrang.workouts}} {{durmstrang.age}} {{durmstrang.feint}}
+								<input  type="button" class="btn btn-success" ng-click = "editDurmstrang(durmstrang)" value="Редактировать">
+								<input  type="button" class="btn btn-success" ng-click = "removeDurmstrang(durmstrang)" value="Удалить">
+								<input  type="button" class="btn btn-success" ng-click = "addDurmstrangToF(durmstrang)" value="Добавить на чемпионат">
+							</p>
+						</div>
+				</div>
+				</div>
+				</div>
+				</div>
+				</div>
+
+				
+
+			        <nav class="navbar navbar-default navbar-static-top ok">
+			          <div class="container">
+			            <div class="navbar-header">
+			              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+			              </button>
+			              <a class="navbar-brand" href="#">Япония</a>
+			            </div>
+			          </div>
+			        </nav>
+
+			     
+				<div class="Mahoutokoro_right" ng-controller = "MahoutokoroController">
+					<h2>Махотокоро</h2>
+						<form name = "MahoutokoroForm">
+							<p>Введите страну: <input name = "countryMahoutokoro" type = "text" ng-model = "countryMahoutokoro" required/></p>
+							<p>Введите тип: <input name = "typeMahoutokoro" type = "text" ng-model = "typeMahoutokoro" required/></p>
+							<p>Введите имя: <input name = "nameMahoutokoro" type = "text" ng-model = "nameMahoutokoro" required/></p>
+							<p>Введите регион: <input name = "regionMahoutokoror" type = "text" ng-model = "regionMahoutokoro" required/></p>
+							<p>Введите запасных: <input name = "stockMahoutokoro" type = "text" ng-model = "stockMahoutokoro" required/></p>
+							<p>Введите тренера: <input name= "trainerMahoutokoro" type = "text" ng-model = "trainerMahoutokoro" required /></p>
+							<p>Введите вес: <input name = "weightMahoutokoro" type = "text" ng-model = "weightMahoutokoro" required/></p>
+							<p>Введите пол: <input name= "genderMahoutokoro" type = "text" ng-model = "genderMahoutokoro" required /></p>
+						</form>
+			      <!--<button ng-click = "addMahoutokoro(MahoutokoroForm)">Add mahoutokoro</button>-->
+			      <input  type="button" class="btn btn-success" ng-click = "addMahoutokoro(MahoutokoroForm)" value="Добавить Махотокоро">
+			       <div ng-repeat = "mahoutokoro in mahoutokoroS" class="btnbtn">
+							<p>
+								{{mahoutokoro.country}} {{mahoutokoro.type}} {{mahoutokoro.name}} {{mahoutokoro.workouts}} {{mahoutokoro.age}} {{mahoutokoro.height}} {{mahoutokoro.feint}}
+								<input  type="button" class="btn btn-success" ng-click = "editMahoutokoro(mahoutokoro)" value="Редактировать">
+								<input  type="button" class="btn btn-success" ng-click = "removeMahoutokoro(mahoutokoro)" value="Удалить">
+								<input  type="button" class="btn btn-success" ng-click = "addMahoutokoroToF(mahoutokoro)" value="Добавить на чемпионат">
+							</p>
+			      </div>
+				</div>
+			
+ <nav class="navbar navbar-default navbar-static-top ok">
+			          <div class="container">
+			            <div class="navbar-header">
+			              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+			              </button>
+			              <a class="navbar-brand" href="#">Чемпионат</a>
+			            </div>
+			          </div>
+			        </nav>
+
+		<div ng-controller = "championshipController" class="championship">
+			<div>
+			<h2>Чемпионат:</h2>
+					<div ng-repeat = "quidditch in championship">
+						<p>
+							{{quidditch.type}} {{quidditch.name}}
+							<input  type="button" class="btn btn-success" ng-click = "removeFromCh(quidditch)" value="Remove from championship">
+						</p>
+				</div>
+			</div>
+		</div>
+		</div>
+		</div>
+
+		<!--<div ng-controller = "championshipController">
+			<h2>Championship</h2>
+			<h3>Commands: </h3>
+
+		</div>-->
+
+
+
+</body>
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="node_modules/angular/angular.js"></script>
+<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/findem.js"></script>
+</html>
+
+<!-- name = "button1" ng-disabled = "MahseerForm.name.$invalid || MahseerForm.gender.$invalid ||
+									MahseerForm.age.$invalid || MahseerForm.size.$invalid ||
+									MahseerForm.color.$invalid || MahseerForm.waterLayer.$invalid ||
+									MahseerForm.activity.$invalid" -->

@@ -1,0 +1,29 @@
+body{
+	font-family: cursive;
+}
+
+.Hogwarts{
+	width:1400px;
+  margin: 0 auto;
+}
+.Hogwarts_left{
+	margin-left: 20px;
+}
+.Hogwarts_right{
+	padding-left: 80px;
+  }
+.Mahoutokoro_right{
+	margin-left: 20px;
+}
+
+.championship{
+	float:left;
+	margin-left: 20px;
+}
+.ok{
+	margin-top: 20px;
+}
+
+.btnbtn{
+	margin-top: 10px;
+}
